@@ -1,0 +1,1410 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>من نحن | إوت بوت</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #00B4D8;
+      --primary-dark: #0077B6;
+      --primary-light: #90E0EF;
+      --secondary: #FF6B6B;
+      --accent: #FFD166;
+      --dark: #0A0F1E;
+      --dark-light: #1E293B;
+      --light: #F8FAFC;
+      --gray: #64748B;
+      --glass: rgba(255, 255, 255, 0.05);
+      --glass-dark: rgba(0, 0, 0, 0.2);
+      --radius: 24px;
+      --radius-sm: 12px;
+      --shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.3);
+      --transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Almarai', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0A0F1E 0%, #1E293B 100%);
+      color: var(--light);
+      line-height: 1.8;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    /* تصميم زجاجي للهيدر */
+    header {
+      background: rgba(10, 15, 30, 0.8);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 1.5rem 5%;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      animation: slideDown 0.8s ease-out;
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      position: relative;
+    }
+
+    .logo-icon {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(45deg, var(--primary), var(--primary-light));
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      color: white;
+      box-shadow: 0 8px 32px rgba(0, 180, 216, 0.3);
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    .logo-text {
+      font-size: 2rem;
+      font-weight: 800;
+      background: linear-gradient(to right, var(--primary), var(--primary-light));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      letter-spacing: -0.5px;
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 0.8rem 1.5rem;
+      border-radius: 50px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .nav-menu a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.7rem 1.5rem;
+      border-radius: 25px;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .nav-menu a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, var(--primary), transparent);
+      opacity: 0;
+      transition: var(--transition);
+      z-index: -1;
+    }
+
+    .nav-menu a:hover {
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .nav-menu a:hover::before {
+      opacity: 0.2;
+    }
+
+    .nav-menu a.active {
+      background: linear-gradient(45deg, var(--primary), var(--primary-light));
+      color: white;
+      box-shadow: 0 8px 32px rgba(0, 180, 216, 0.4);
+    }
+
+    /* Hero Section مع تأثيرات جسيمات */
+    .hero-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 8rem 5% 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .particles {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    .particle {
+      position: absolute;
+      background: linear-gradient(45deg, var(--primary), var(--primary-light));
+      border-radius: 50%;
+      animation: floatParticle 15s infinite linear;
+    }
+
+    .hero-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .hero-main {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-text {
+      position: relative;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: linear-gradient(45deg, var(--primary), var(--primary-light));
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 8px 32px rgba(0, 180, 216, 0.3);
+      animation: pulseBadge 2s infinite;
+    }
+
+    .hero-title {
+      font-size: 4.5rem;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(to right, var(--light) 30%, var(--primary-light));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      position: relative;
+    }
+
+    .hero-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      right: 0;
+      width: 200px;
+      height: 4px;
+      background: linear-gradient(to right, var(--primary), var(--primary-light));
+      border-radius: 2px;
+    }
+
+    .hero-description {
+      font-size: 1.3rem;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 3rem;
+      line-height: 1.8;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 3rem;
+      margin-top: 4rem;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 3.5rem;
+      font-weight: 800;
+      background: linear-gradient(to bottom, var(--light), var(--primary-light));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      line-height: 1;
+      position: relative;
+    }
+
+    .stat-number::after {
+      content: '+';
+      position: absolute;
+      font-size: 2rem;
+      color: var(--primary);
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      color: var(--gray);
+      margin-top: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .hero-visual {
+      position: relative;
+    }
+
+    .visual-container {
+      position: relative;
+      width: 500px;
+      height: 500px;
+      margin: 0 auto;
+    }
+
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(40px);
+      animation: rotateOrb 20s linear infinite;
+    }
+
+    .orb-1 {
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle at 30% 30%, var(--primary), transparent 70%);
+      top: 50px;
+      right: 50px;
+      animation-delay: 0s;
+    }
+
+    .orb-2 {
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle at 70% 70%, var(--secondary), transparent 70%);
+      top: 100px;
+      right: 100px;
+      animation-delay: 5s;
+    }
+
+    .orb-3 {
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle at 50% 50%, var(--accent), transparent 70%);
+      top: 150px;
+      right: 150px;
+      animation-delay: 10s;
+    }
+
+    .floating-cube {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 300px;
+      height: 300px;
+      perspective: 1000px;
+    }
+
+    .cube {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      animation: rotateCube 20s infinite linear;
+    }
+
+    .face {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      color: var(--primary);
+    }
+
+    .front { transform: translateZ(150px); }
+    .back { transform: rotateY(180deg) translateZ(150px); }
+    .right { transform: rotateY(90deg) translateZ(150px); }
+    .left { transform: rotateY(-90deg) translateZ(150px); }
+    .top { transform: rotateX(90deg) translateZ(150px); }
+    .bottom { transform: rotateX(-90deg) translateZ(150px); }
+
+    /* قسم القيم */
+    .values-section {
+      padding: 8rem 5%;
+      position: relative;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 6rem;
+    }
+
+    .section-title {
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(to right, var(--light), var(--primary-light));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .section-subtitle {
+      font-size: 1.3rem;
+      color: rgba(255, 255, 255, 0.7);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 3rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .value-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: var(--radius);
+      padding: 3.5rem 3rem;
+      backdrop-filter: blur(10px);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .value-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, transparent, rgba(0, 180, 216, 0.1), transparent);
+      transform: translateX(-100%);
+      transition: var(--transition);
+    }
+
+    .value-card:hover::before {
+      transform: translateX(100%);
+    }
+
+    .value-card:hover {
+      transform: translateY(-10px);
+      border-color: rgba(0, 180, 216, 0.3);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .value-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(45deg, var(--primary), var(--primary-light));
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 2.5rem;
+      font-size: 2.5rem;
+      color: white;
+      box-shadow: 0 8px 32px rgba(0, 180, 216, 0.3);
+    }
+
+    .value-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: var(--light);
+    }
+
+    .value-description {
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.8;
+    }
+
+    /* قسم الميزات */
+    .features-section {
+      padding: 8rem 5%;
+      background: rgba(0, 0, 0, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .features-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 4rem;
+    }
+
+    .feature-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: var(--radius);
+      padding: 3rem;
+      text-align: center;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-15px);
+      border-color: rgba(0, 180, 216, 0.3);
+      box-shadow: 0 20px 60px rgba(0, 180, 216, 0.2);
+    }
+
+    .feature-number {
+      position: absolute;
+      top: -20px;
+      right: 50%;
+      transform: translateX(50%);
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(45deg, var(--primary), var(--primary-light));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    .feature-icon {
+      font-size: 3.5rem;
+      margin-bottom: 2rem;
+      background: linear-gradient(to bottom, var(--primary), var(--primary-light));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .feature-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: var(--light);
+    }
+
+    .feature-description {
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.8;
+    }
+
+    /* قسم الشركاء */
+    .partners-section {
+      padding: 8rem 5%;
+      position: relative;
+    }
+
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 4rem;
+      max-width: 1200px;
+      margin: 6rem auto 0;
+    }
+
+    .partner-logo {
+      height: 120px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+      backdrop-filter: blur(10px);
+    }
+
+    .partner-logo:hover {
+      transform: translateY(-10px) scale(1.05);
+      border-color: rgba(0, 180, 216, 0.3);
+      box-shadow: 0 20px 60px rgba(0, 180, 216, 0.2);
+    }
+
+    .partner-logo i {
+      font-size: 3.5rem;
+      background: linear-gradient(45deg, var(--primary), var(--primary-light));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    /* Footer متميز */
+    footer {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 6rem 5% 3rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .footer-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 4rem;
+    }
+
+    .footer-col {
+      position: relative;
+    }
+
+    .footer-col h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      color: var(--light);
+      position: relative;
+      padding-bottom: 1rem;
+    }
+
+    .footer-col h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(to right, var(--primary), var(--primary-light));
+      border-radius: 2px;
+    }
+
+    .footer-col p {
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 2rem;
+      line-height: 1.8;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: none;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary-light);
+      transform: translateX(-10px);
+    }
+
+    .footer-links a i {
+      font-size: 0.9rem;
+      color: var(--primary);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .social-link {
+      width: 50px;
+      height: 50px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: none;
+      transition: var(--transition);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .social-link:hover {
+      background: linear-gradient(45deg, var(--primary), var(--primary-light));
+      color: white;
+      transform: translateY(-5px) rotate(10deg);
+      box-shadow: 0 10px 30px rgba(0, 180, 216, 0.3);
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 6rem;
+      padding-top: 3rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      color: rgba(255, 255, 255, 0.4);
+      font-size: 0.9rem;
+    }
+
+    /* أنيميشن */
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-100%);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes glow {
+      from {
+        box-shadow: 0 8px 32px rgba(0, 180, 216, 0.3);
+      }
+      to {
+        box-shadow: 0 8px 32px rgba(0, 180, 216, 0.6);
+      }
+    }
+
+    @keyframes pulseBadge {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+    }
+
+    @keyframes floatParticle {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes rotateOrb {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes rotateCube {
+      0% {
+        transform: rotateX(0) rotateY(0) rotateZ(0);
+      }
+      100% {
+        transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* تأثيرات إضافية */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 30px;
+      right: 50%;
+      transform: translateX(50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      color: rgba(255, 255, 255, 0.6);
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateX(50%) translateY(0);
+      }
+      40% {
+        transform: translateX(50%) translateY(-15px);
+      }
+      60% {
+        transform: translateX(50%) translateY(-7px);
+      }
+    }
+
+    .mouse {
+      width: 35px;
+      height: 60px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 20px;
+      position: relative;
+    }
+
+    .wheel {
+      width: 6px;
+      height: 15px;
+      background: linear-gradient(to bottom, var(--primary), var(--primary-light));
+      border-radius: 3px;
+      position: absolute;
+      top: 10px;
+      right: 50%;
+      transform: translateX(50%);
+      animation: scroll 2s infinite;
+    }
+
+    @keyframes scroll {
+      0% {
+        opacity: 1;
+        transform: translateX(50%) translateY(0);
+      }
+      100% {
+        opacity: 0;
+        transform: translateX(50%) translateY(25px);
+      }
+    }
+
+    /* تصميم متجاوب */
+    @media (max-width: 1200px) {
+      .hero-main {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      
+      .hero-title {
+        font-size: 3.5rem;
+      }
+      
+      .visual-container {
+        width: 400px;
+        height: 400px;
+      }
+      
+      .orb-1 { width: 300px; height: 300px; }
+      .orb-2 { width: 200px; height: 200px; }
+      .orb-3 { width: 100px; height: 100px; }
+      
+      .floating-cube {
+        width: 250px;
+        height: 250px;
+      }
+      
+      .face {
+        width: 250px;
+        height: 250px;
+      }
+      
+      .front { transform: translateZ(125px); }
+      .back { transform: rotateY(180deg) translateZ(125px); }
+      .right { transform: rotateY(90deg) translateZ(125px); }
+      .left { transform: rotateY(-90deg) translateZ(125px); }
+      .top { transform: rotateX(90deg) translateZ(125px); }
+      .bottom { transform: rotateX(-90deg) translateZ(125px); }
+    }
+
+    @media (max-width: 992px) {
+      .hero-title {
+        font-size: 3rem;
+      }
+      
+      .section-title {
+        font-size: 2.8rem;
+      }
+      
+      .nav-menu {
+        display: none;
+      }
+      
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .features-container {
+        grid-template-columns: 1fr;
+      }
+      
+      .partners-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.5rem;
+      }
+      
+      .hero-description {
+        font-size: 1.1rem;
+      }
+      
+      .hero-stats {
+        flex-direction: column;
+        gap: 2.5rem;
+      }
+      
+      .section-title {
+        font-size: 2.3rem;
+      }
+      
+      .visual-container {
+        width: 300px;
+        height: 300px;
+      }
+      
+      .floating-cube {
+        width: 200px;
+        height: 200px;
+      }
+      
+      .face {
+        width: 200px;
+        height: 200px;
+        font-size: 3rem;
+      }
+      
+      .front { transform: translateZ(100px); }
+      .back { transform: rotateY(180deg) translateZ(100px); }
+      .right { transform: rotateY(90deg) translateZ(100px); }
+      .left { transform: rotateY(-90deg) translateZ(100px); }
+      .top { transform: rotateX(90deg) translateZ(100px); }
+      .bottom { transform: rotateX(-90deg) translateZ(100px); }
+    }
+
+    @media (max-width: 576px) {
+      .hero-title {
+        font-size: 2rem;
+      }
+      
+      .section-title {
+        font-size: 2rem;
+      }
+      
+      .stat-number {
+        font-size: 2.8rem;
+      }
+      
+      .value-card {
+        padding: 2.5rem 2rem;
+      }
+      
+      .partners-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .footer-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- جسيمات الخلفية -->
+  <div class="particles" id="particles"></div>
+
+  <!-- الهيدر -->
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <div class="logo-icon">
+          <i class="fas fa-robot"></i>
+        </div>
+        <span class="logo-text">إوت بوت</span>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="projects.html">المشاريع</a></li>
+        <li><a href="about.html" class="active">من نحن</a></li>
+        <li><a href="services.html">الخدمات</a></li>
+        <li><a href="join.html">انضم إلينا</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="scroll-indicator">
+      <div class="mouse">
+        <div class="wheel"></div>
+      </div>
+      <span>اكتشف المزيد</span>
+    </div>
+    
+    <div class="hero-content">
+      <div class="hero-main">
+        <div class="hero-text">
+          <span class="hero-badge">مبتكرون في التقنية</span>
+          <h1 class="hero-title">صناعة المستقبل الرقمي</h1>
+          <p class="hero-description">
+            في إوت بوت، نحن أكثر من مجرد شركة تقنية. نحن رواد في تحويل الأفكار إلى واقع رقمي ملموس. نبتكر حلولاً ذكية تجمع بين الفن والتقنية لخلق تجارب استثنائية.
+          </p>
+          
+          <div class="hero-stats">
+            <div class="stat-item">
+              <div class="stat-number" data-target="150">0</div>
+              <div class="stat-label">مشروع مكتمل</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number" data-target="75">0</div>
+              <div class="stat-label">عميل سعيد</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number" data-target="25">0</div>
+              <div class="stat-label">جائزة فوز</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="hero-visual">
+          <div class="visual-container">
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+            <div class="orb orb-3"></div>
+            
+            <div class="floating-cube">
+              <div class="cube">
+                <div class="face front">
+                  <i class="fas fa-brain"></i>
+                </div>
+                <div class="face back">
+                  <i class="fas fa-code"></i>
+                </div>
+                <div class="face right">
+                  <i class="fas fa-robot"></i>
+                </div>
+                <div class="face left">
+                  <i class="fas fa-cogs"></i>
+                </div>
+                <div class="face top">
+                  <i class="fas fa-lightbulb"></i>
+                </div>
+                <div class="face bottom">
+                  <i class="fas fa-rocket"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- قسم القيم -->
+  <section class="values-section">
+    <div class="section-header">
+      <h2 class="section-title">فلسفتنا في العمل</h2>
+      <p class="section-subtitle">نؤمن بأن التميز الحقيقي يأتي من الالتزام بالقيم الأساسية التي توجه كل قرار نتخذه</p>
+    </div>
+    
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-icon">
+          <i class="fas fa-lightbulb"></i>
+        </div>
+        <h3 class="value-title">ابتكار بلا حدود</h3>
+        <p class="value-description">
+          ندفع حدود الإمكانيات التقنية لنخلق حلولاً غير مسبوقة. كل مشروع هو فرصة للابتكار والتجديد.
+        </p>
+      </div>
+      
+      <div class="value-card">
+        <div class="value-icon">
+          <i class="fas fa-handshake"></i>
+        </div>
+        <h3 class="value-title">شراكة استراتيجية</h3>
+        <p class="value-description">
+          نعمل كجزء من فريق عملائنا، نفهم تطلعاتهم ونتشارك معهم الرحلة نحو تحقيق الأهداف.
+        </p>
+      </div>
+      
+      <div class="value-card">
+        <div class="value-icon">
+          <i class="fas fa-gem"></i>
+        </div>
+        <h3 class="value-title">جودة استثنائية</h3>
+        <p class="value-description">
+          لا نقبل سوى بالأفضل. كل تفصيل يمر بمراحل ضبط جودة صارمة لضمان التميز.
+        </p>
+      </div>
+      
+      <div class="value-card">
+        <div class="value-icon">
+          <i class="fas fa-heart"></i>
+        </div>
+        <h3 class="value-title">تأثير إيجابي</h3>
+        <p class="value-description">
+          نساهم في بناء مستقبل أفضل من خلال حلول تقنية تحسن حياة الناس وتدفع عجلة التطور.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- قسم الميزات -->
+  <section class="features-section">
+    <div class="section-header">
+      <h2 class="section-title">ما يميزنا</h2>
+      <p class="section-subtitle">نقدم تجربة فريدة تجمع بين الإبداع التقني والتفوق التنفيذي</p>
+    </div>
+    
+    <div class="features-container">
+      <div class="feature-card">
+        <div class="feature-number">01</div>
+        <div class="feature-icon">
+          <i class="fas fa-brain"></i>
+        </div>
+        <h3 class="feature-title">ذكاء اصطناعي متقدم</h3>
+        <p class="feature-description">
+          نحن رواد في تطوير حلول الذكاء الاصطناعي التي تتعلم وتتطور مع احتياجات العمل.
+        </p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-number">02</div>
+        <div class="feature-icon">
+          <i class="fas fa-bolt"></i>
+        </div>
+        <h3 class="feature-title">سرعة فائقة</h3>
+        <p class="feature-description">
+          نقدم حلولاً سريعة التجاوب مصممة لتلبية متطلبات العصر الرقمي المتسارع.
+        </p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-number">03</div>
+        <div class="feature-icon">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <h3 class="feature-title">أمان مطلق</h3>
+        <p class="feature-description">
+          نضمن حماية بياناتك بطبقات أمان متعددة وفقاً لأعلى المعايير العالمية.
+        </p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-number">04</div>
+        <div class="feature-icon">
+          <i class="fas fa-infinity"></i>
+        </div>
+        <h3 class="feature-title">توسع لا نهائي</h3>
+        <p class="feature-description">
+          حلولنا مصممة لتنمو مع عملك، تدعم التوسع المستقبلي بسلاسة وكفاءة.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- قسم الشركاء -->
+  <section class="partners-section">
+    <div class="section-header">
+      <h2 class="section-title">شركاء التميز</h2>
+      <p class="section-subtitle">نفتخر بشراكاتنا الاستراتيجية مع أبرز الشركات الرائدة في المجال التقني</p>
+    </div>
+    
+    <div class="partners-grid">
+      <div class="partner-logo">
+        <i class="fas fa-cloud"></i>
+      </div>
+      <div class="partner-logo">
+        <i class="fas fa-microchip"></i>
+      </div>
+      <div class="partner-logo">
+        <i class="fas fa-network-wired"></i>
+      </div>
+      <div class="partner-logo">
+        <i class="fas fa-satellite"></i>
+      </div>
+      <div class="partner-logo">
+        <i class="fas fa-server"></i>
+      </div>
+      <div class="partner-logo">
+        <i class="fas fa-database"></i>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>إوت بوت</h3>
+        <p>نحن شركة رائدة في تقديم حلول التقنية الحديثة والذكاء الاصطناعي لتحويل أفكارك إلى واقع ملموس.</p>
+        <div class="social-links">
+          <a href="#" class="social-link">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" class="social-link">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="#" class="social-link">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="#" class="social-link">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+      
+      <div class="footer-col">
+        <h3>روابط سريعة</h3>
+        <div class="footer-links">
+          <a href="index.html">
+            <i class="fas fa-chevron-left"></i>
+            الرئيسية
+          </a>
+          <a href="projects.html">
+            <i class="fas fa-chevron-left"></i>
+            المشاريع
+          </a>
+          <a href="about.html">
+            <i class="fas fa-chevron-left"></i>
+            من نحن
+          </a>
+          <a href="services.html">
+            <i class="fas fa-chevron-left"></i>
+            الخدمات
+          </a>
+          <a href="join.html">
+            <i class="fas fa-chevron-left"></i>
+            انضم إلينا
+          </a>
+        </div>
+      </div>
+      
+      <div class="footer-col">
+        <h3>خدماتنا</h3>
+        <div class="footer-links">
+          <a href="#">
+            <i class="fas fa-chevron-left"></i>
+            تطوير الويب
+          </a>
+          <a href="#">
+            <i class="fas fa-chevron-left"></i>
+            تطبيقات الجوال
+          </a>
+          <a href="#">
+            <i class="fas fa-chevron-left"></i>
+            الذكاء الاصطناعي
+          </a>
+          <a href="#">
+            <i class="fas fa-chevron-left"></i>
+            تحليل البيانات
+          </a>
+          <a href="#">
+            <i class="fas fa-chevron-left"></i>
+            التسويق الرقمي
+          </a>
+        </div>
+      </div>
+      
+      <div class="footer-col">
+        <h3>اتصل بنا</h3>
+        <p>الرياض، السعودية</p>
+        <p>+966 55 123 4567</p>
+        <p>info@autobot.com</p>
+        <p>الأحد - الخميس: 8ص - 5م</p>
+      </div>
+    </div>
+    
+    <div class="copyright">
+      <p>© 2023 إوت بوت. جميع الحقوق محفوظة.</p>
+    </div>
+  </footer>
+
+  <script>
+    // تأثيرات الجسيمات
+    function createParticles() {
+      const particlesContainer = document.getElementById('particles');
+      const particleCount = 50;
+      
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+        
+        // أبعاد عشوائية
+        const size = Math.random() * 5 + 1;
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        
+        // موقع عشوائي
+        particle.style.right = `${Math.random() * 100}%`;
+        particle.style.top = `${Math.random() * 100}%`;
+        
+        // تأخير عشوائي للأنيميشن
+        particle.style.animationDelay = `${Math.random() * 15}s`;
+        
+        // شفافية عشوائية
+        particle.style.opacity = Math.random() * 0.3 + 0.1;
+        
+        particlesContainer.appendChild(particle);
+      }
+    }
+    
+    // تأثير العد
+    function animateCount(element, start, end, duration) {
+      let startTimestamp = null;
+      const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        const value = Math.floor(progress * (end - start) + start);
+        element.textContent = value;
+        
+        if (progress < 1) {
+          window.requestAnimationFrame(step);
+        }
+      };
+      window.requestAnimationFrame(step);
+    }
+    
+    // تأثيرات عند التمرير
+    function handleScrollAnimations() {
+      const elements = document.querySelectorAll('.value-card, .feature-card, .partner-logo');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      
+      elements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        observer.observe(el);
+      });
+    }
+    
+    // تأثير مكعب التفاعلي
+    function setupCubeInteraction() {
+      const cube = document.querySelector('.cube');
+      if (!cube) return;
+      
+      let mouseX = 0;
+      let mouseY = 0;
+      let cubeX = 0;
+      let cubeY = 0;
+      
+      document.addEventListener('mousemove', (e) => {
+        mouseX = (e.clientX / window.innerWidth) - 0.5;
+        mouseY = (e.clientY / window.innerHeight) - 0.5;
+      });
+      
+      function animateCube() {
+        cubeX += (mouseX * 180 - cubeX) * 0.05;
+        cubeY += (mouseY * 180 - cubeY) * 0.05;
+        
+        cube.style.transform = `rotateX(${cubeY}deg) rotateY(${cubeX}deg)`;
+        
+        requestAnimationFrame(animateCube);
+      }
+      
+      animateCube();
+    }
+    
+    // تأثيرات الهيدر عند التمرير
+    function setupHeaderEffect() {
+      const header = document.querySelector('header');
+      let lastScroll = 0;
+      
+      window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+        
+        if (currentScroll <= 100) {
+          header.style.background = 'rgba(10, 15, 30, 0.8)';
+          header.style.backdropFilter = 'blur(20px)';
+        } else if (currentScroll > lastScroll) {
+          header.style.transform = 'translateY(-100%)';
+        } else {
+          header.style.transform = 'translateY(0)';
+          header.style.background = 'rgba(10, 15, 30, 0.9)';
+          header.style.backdropFilter = 'blur(20px)';
+        }
+        
+        lastScroll = currentScroll;
+      });
+    }
+    
+    // تهيئة كل التأثيرات
+    document.addEventListener('DOMContentLoaded', function() {
+      // إنشاء الجسيمات
+      createParticles();
+      
+      // تأثير العد للأرقام
+      const statNumbers = document.querySelectorAll('.stat-number');
+      statNumbers.forEach(stat => {
+        const target = parseInt(stat.getAttribute('data-target'));
+        animateCount(stat, 0, target, 2000);
+      });
+      
+      // تأثيرات الظهور عند التمرير
+      handleScrollAnimations();
+      
+      // تأثير المكعب التفاعلي
+      setupCubeInteraction();
+      
+      // تأثير الهيدر
+      setupHeaderEffect();
+      
+      // تأثيرات hover للبطاقات
+      const cards = document.querySelectorAll('.value-card, .feature-card, .partner-logo');
+      cards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+          this.style.transform = this.classList.contains('partner-logo') 
+            ? 'translateY(-10px) scale(1.05)' 
+            : 'translateY(-10px)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+          this.style.transform = 'translateY(0) scale(1)';
+        });
+      });
+      
+      // تأثيرات القائمة
+      const navLinks = document.querySelectorAll('.nav-menu a');
+      navLinks.forEach(link => {
+        link.addEventListener('mouseenter', function() {
+          this.style.transform = 'translateY(-2px) scale(1.05)';
+        });
+        
+        link.addEventListener('mouseleave', function() {
+          this.style.transform = 'translateY(0) scale(1)';
+        });
+      });
+    });
+  </script>
+</body>
+</html>
