@@ -28,7 +28,6 @@ app.mount("/static", StaticFiles(directory=os.path.join(BASE_DIR, "static")), na
 
 # إعداد قوالب Jinja2
 templates = Jinja2Templates(directory=os.path.join(BASE_DIR, "templates"))
-
 # صفحات الموقع
 @app.get("/", response_class=HTMLResponse)
 def home(request: Request):
@@ -53,3 +52,16 @@ def services_page(request: Request):
 @app.get("/admin", response_class=HTMLResponse)
 def admin_page(request: Request):
     return templates.TemplateResponse("admin.html", {"request": request})
+
+# إضافة توجيهات للروابط القديمة (.html) للتأكد من التوافق
+@app.get("/index.html", response_class=HTMLResponse)
+def home_html(request: Request):
+    return templates.TemplateResponse("index.html", {"request": request})
+
+@app.get("/projects.html", response_class=HTMLResponse)
+def projects_html(request: Request):
+    return templates.TemplateResponse("projects.html", {"request": request})
+
+@app.get("/join.html", response_class=HTMLResponse)
+def join_html(request: Request):
+    return templates.TemplateResponse("join.html", {"request": request})

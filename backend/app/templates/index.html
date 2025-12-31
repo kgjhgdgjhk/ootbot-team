@@ -1,1398 +1,1517 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>فريق إوت بوت - الصفحة الرئيسية</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Cairo:wght@300;400;500;600;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Cairo:wght@300;400;500;600;700&family=Tajawal:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/static/css/style.css" />
     <style>
-        :root {
-            --primary: #4361ee;
-            --secondary: #3a0ca3;
-            --accent: #f72585;
-            --light: #f8f9fa;
-            --dark: #212529;
-            --gray: #6c757d;
-            --shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            --radius: 12px;
-            --transition: all 0.3s ease;
-            --primary-blue: #00b4d8;
-            --primary-dark: #0077b6;
-            --primary-light: #90e0ef;
-            --accent-yellow: #ffd166;
-            --dark-blue: #0a0f1e;
-            --dark-light: #1e293b;
-        }
+      :root {
+        --primary: #4361ee;
+        --secondary: #3a0ca3;
+        --accent: #f72585;
+        --light: #f8f9fa;
+        --dark: #212529;
+        --gray: #6c757d;
+        --shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        --radius: 12px;
+        --transition: all 0.3s ease;
+        --primary-blue: #00b4d8;
+        --primary-dark: #0077b6;
+        --primary-light: #90e0ef;
+        --accent-yellow: #ffd166;
+        --dark-blue: #0a0f1e;
+        --dark-light: #1e293b;
+      }
 
-        /* قسم من نحن - التصميم المتقدم */
-        .about-section {
-            padding: 6rem 5%;
-            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--dark-light) 100%);
-            color: var(--light);
-            position: relative;
-            overflow: hidden;
-        }
+      /* قسم من نحن - التصميم المتقدم */
+      .about-section {
+        padding: 6rem 5%;
+        background: linear-gradient(
+          135deg,
+          var(--dark-blue) 0%,
+          var(--dark-light) 100%
+        );
+        color: var(--light);
+        position: relative;
+        overflow: hidden;
+      }
 
-        .about-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
+      .about-header {
+        text-align: center;
+        margin-bottom: 4rem;
+      }
 
-        .about-title {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(to right, var(--light), var(--primary-light));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            font-family: 'Almarai', sans-serif;
-        }
+      .about-title {
+        font-size: 3.5rem;
+        font-weight: 800;
+        margin-bottom: 1.5rem;
+        background: linear-gradient(
+          to right,
+          var(--light),
+          var(--primary-light)
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        font-family: "Almarai", sans-serif;
+      }
 
-        .about-subtitle {
-            font-size: 1.3rem;
-            color: rgba(255, 255, 255, 0.7);
-            max-width: 700px;
-            margin: 0 auto;
-            font-family: 'Almarai', sans-serif;
-        }
+      .about-subtitle {
+        font-size: 1.3rem;
+        color: rgba(255, 255, 255, 0.7);
+        max-width: 700px;
+        margin: 0 auto;
+        font-family: "Almarai", sans-serif;
+      }
 
+      .about-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      .about-text {
+        position: relative;
+      }
+
+      .about-badge {
+        display: inline-block;
+        background: linear-gradient(
+          45deg,
+          var(--primary-blue),
+          var(--primary-light)
+        );
+        color: white;
+        padding: 0.8rem 1.5rem;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 8px 32px rgba(0, 180, 216, 0.3);
+        animation: pulseBadge 2s infinite;
+      }
+
+      .about-main-title {
+        font-size: 3.5rem;
+        font-weight: 800;
+        line-height: 1.1;
+        margin-bottom: 1.5rem;
+        background: linear-gradient(
+          to right,
+          var(--light) 30%,
+          var(--primary-light)
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        position: relative;
+        font-family: "Almarai", sans-serif;
+      }
+
+      .about-main-title::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        right: 0;
+        width: 200px;
+        height: 4px;
+        background: linear-gradient(
+          to right,
+          var(--primary-blue),
+          var(--primary-light)
+        );
+        border-radius: 2px;
+      }
+
+      .about-description {
+        font-size: 1.2rem;
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 2rem;
+        line-height: 1.8;
+        font-family: "Almarai", sans-serif;
+      }
+
+      .about-stats {
+        display: flex;
+        gap: 3rem;
+        margin-top: 3rem;
+      }
+
+      .about-stat-item {
+        text-align: center;
+      }
+
+      .about-stat-number {
+        font-size: 2.5rem;
+        font-weight: 800;
+        background: linear-gradient(
+          to bottom,
+          var(--light),
+          var(--primary-light)
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        line-height: 1;
+        position: relative;
+      }
+
+      .about-stat-number::after {
+        content: "+";
+        position: absolute;
+        font-size: 1.5rem;
+        color: var(--primary-blue);
+      }
+
+      .about-stat-label {
+        font-size: 0.9rem;
+        color: var(--gray);
+        margin-top: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .about-visual {
+        position: relative;
+      }
+
+      .about-visual-container {
+        position: relative;
+        width: 100%;
+        height: 400px;
+      }
+
+      .about-orb {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(40px);
+        animation: rotateOrb 20s linear infinite;
+      }
+
+      .about-orb-1 {
+        width: 300px;
+        height: 300px;
+        background: radial-gradient(
+          circle at 30% 30%,
+          var(--primary-blue),
+          transparent 70%
+        );
+        top: 50px;
+        right: 50px;
+        animation-delay: 0s;
+      }
+
+      .about-orb-2 {
+        width: 200px;
+        height: 200px;
+        background: radial-gradient(
+          circle at 70% 70%,
+          #ff6b6b,
+          transparent 70%
+        );
+        top: 100px;
+        right: 100px;
+        animation-delay: 5s;
+      }
+
+      .about-floating-cube {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 250px;
+        height: 250px;
+        perspective: 1000px;
+      }
+
+      .about-cube {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transform-style: preserve-3d;
+        animation: rotateCube 20s infinite linear;
+      }
+
+      .about-face {
+        position: absolute;
+        width: 250px;
+        height: 250px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        color: var(--primary-blue);
+      }
+
+      .about-front {
+        transform: translateZ(125px);
+      }
+      .about-back {
+        transform: rotateY(180deg) translateZ(125px);
+      }
+      .about-right {
+        transform: rotateY(90deg) translateZ(125px);
+      }
+      .about-left {
+        transform: rotateY(-90deg) translateZ(125px);
+      }
+      .about-top {
+        transform: rotateX(90deg) translateZ(125px);
+      }
+      .about-bottom {
+        transform: rotateX(-90deg) translateZ(125px);
+      }
+
+      .values-section {
+        padding: 6rem 5%;
+        background: linear-gradient(135deg, var(--dark-blue) 0%, #111827 100%);
+        position: relative;
+      }
+
+      .values-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .value-card {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: var(--radius);
+        padding: 2.5rem 2rem;
+        backdrop-filter: blur(10px);
+        transition: var(--transition);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .value-card:hover {
+        transform: translateY(-10px);
+        border-color: rgba(0, 180, 216, 0.3);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      }
+
+      .value-icon {
+        width: 70px;
+        height: 70px;
+        background: linear-gradient(
+          45deg,
+          var(--primary-blue),
+          var(--primary-light)
+        );
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+        font-size: 2rem;
+        color: white;
+        box-shadow: 0 8px 32px rgba(0, 180, 216, 0.3);
+      }
+
+      .value-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: var(--light);
+        font-family: "Almarai", sans-serif;
+      }
+
+      .value-description {
+        color: rgba(255, 255, 255, 0.7);
+        line-height: 1.6;
+        font-family: "Almarai", sans-serif;
+      }
+
+      /* قسم الخدمات الجديد */
+      .services-section {
+        padding: 6rem 5%;
+        background-color: #f5f7ff;
+        position: relative;
+      }
+
+      .services-header {
+        text-align: center;
+        margin-bottom: 4rem;
+      }
+
+      .services-header h2 {
+        font-size: 3rem;
+        color: var(--secondary);
+        margin-bottom: 1rem;
+        position: relative;
+        display: inline-block;
+        font-family: "Tajawal", sans-serif;
+      }
+
+      .services-header h2::after {
+        content: "";
+        position: absolute;
+        bottom: -15px;
+        right: 50%;
+        transform: translateX(50%);
+        width: 100px;
+        height: 5px;
+        background: linear-gradient(to right, var(--primary), var(--accent));
+        border-radius: 5px;
+        animation: expandWidth 1.5s ease-out forwards;
+      }
+
+      .services-header p {
+        font-size: 1.2rem;
+        color: var(--gray);
+        max-width: 600px;
+        margin: 2rem auto;
+        font-family: "Tajawal", sans-serif;
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 2.5rem;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      .service-card {
+        background-color: white;
+        border-radius: var(--radius);
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+        position: relative;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        border-top: 5px solid var(--primary);
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeUp 0.8s ease-out forwards;
+      }
+
+      .service-card:hover {
+        transform: translateY(-15px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      }
+
+      .service-icon {
+        height: 200px;
+        background: linear-gradient(
+          135deg,
+          rgba(67, 97, 238, 0.1) 0%,
+          rgba(247, 37, 133, 0.1) 100%
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .service-icon i {
+        font-size: 4rem;
+        color: var(--primary);
+        z-index: 2;
+        transition: var(--transition);
+      }
+
+      .service-card:hover .service-icon i {
+        transform: scale(1.2) rotate(10deg);
+      }
+
+      .service-icon::after {
+        content: "";
+        position: absolute;
+        width: 150px;
+        height: 150px;
+        background: linear-gradient(
+          135deg,
+          rgba(67, 97, 238, 0.2) 0%,
+          rgba(247, 37, 133, 0.2) 100%
+        );
+        border-radius: 50%;
+        z-index: 1;
+        animation: float 8s infinite ease-in-out;
+      }
+
+      .service-content {
+        padding: 2rem;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .service-content h3 {
+        font-size: 1.5rem;
+        color: var(--secondary);
+        margin-bottom: 1rem;
+        transition: var(--transition);
+        font-family: "Tajawal", sans-serif;
+      }
+
+      .service-card:hover .service-content h3 {
+        color: var(--primary);
+      }
+
+      .service-content p {
+        color: var(--gray);
+        margin-bottom: 1.5rem;
+        flex-grow: 1;
+        font-family: "Tajawal", sans-serif;
+      }
+
+      .service-features {
+        margin-bottom: 1.5rem;
+      }
+
+      .service-features li {
+        color: var(--dark);
+        margin-bottom: 0.5rem;
+        padding-right: 1.5rem;
+        position: relative;
+        font-family: "Tajawal", sans-serif;
+      }
+
+      .service-features li::before {
+        content: "✓";
+        position: absolute;
+        right: 0;
+        color: var(--accent);
+        font-weight: bold;
+      }
+
+      .service-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        background: linear-gradient(to left, var(--primary), var(--secondary));
+        color: white;
+        text-decoration: none;
+        padding: 0.8rem 1.5rem;
+        border-radius: 30px;
+        font-weight: 600;
+        transition: var(--transition);
+        align-self: flex-start;
+        box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+        margin-top: auto;
+        font-family: "Tajawal", sans-serif;
+      }
+
+      .service-link:hover {
+        transform: translateX(-5px);
+        background: linear-gradient(to left, var(--secondary), var(--primary));
+        box-shadow: 0 8px 20px rgba(67, 97, 238, 0.4);
+        gap: 1rem;
+      }
+
+      .service-link i {
+        transition: var(--transition);
+      }
+
+      .service-link:hover i {
+        transform: translateX(-5px);
+      }
+
+      /* قسم كيفية العمل */
+      .process-section {
+        margin-bottom: 5rem;
+        padding: 0 5%;
+        max-width: 1400px;
+        margin: 4rem auto;
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 2.5rem;
+        color: var(--secondary);
+        margin-bottom: 3rem;
+        position: relative;
+        font-family: "Tajawal", sans-serif;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: -15px;
+        right: 50%;
+        transform: translateX(50%);
+        width: 80px;
+        height: 4px;
+        background-color: var(--accent);
+        border-radius: 2px;
+      }
+
+      .process-steps {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        margin-top: 4rem;
+      }
+
+      .process-steps::before {
+        content: "";
+        position: absolute;
+        top: 50px;
+        right: 0;
+        width: 100%;
+        height: 3px;
+        background-color: #e9ecef;
+        z-index: 1;
+      }
+
+      .process-step {
+        text-align: center;
+        position: relative;
+        z-index: 2;
+        flex: 1;
+        max-width: 200px;
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeUp 0.8s ease-out forwards;
+      }
+
+      .step-number {
+        width: 100px;
+        height: 100px;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin: 0 auto 1.5rem;
+        box-shadow: 0 10px 20px rgba(67, 97, 238, 0.3);
+        transition: var(--transition);
+      }
+
+      .process-step:hover .step-number {
+        transform: scale(1.1);
+        background: linear-gradient(135deg, var(--accent), var(--primary));
+      }
+
+      .step-content h4 {
+        font-size: 1.3rem;
+        color: var(--secondary);
+        margin-bottom: 0.8rem;
+        font-family: "Tajawal", sans-serif;
+      }
+
+      .step-content p {
+        color: var(--gray);
+        font-size: 0.95rem;
+        font-family: "Tajawal", sans-serif;
+      }
+
+      /* الأنيميشن */
+      @keyframes pulseBadge {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+      }
+
+      @keyframes rotateOrb {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes rotateCube {
+        0% {
+          transform: rotateX(0) rotateY(0) rotateZ(0);
+        }
+        100% {
+          transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+        }
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes expandWidth {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100px;
+        }
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-20px) rotate(180deg);
+        }
+        100% {
+          transform: translateY(0) rotate(360deg);
+        }
+      }
+
+      .highlight {
+        background: linear-gradient(to right, var(--accent), var(--primary));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        font-weight: 700;
+      }
+
+      /* تصميم متجاوب */
+      @media (max-width: 992px) {
         .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .about-text {
-            position: relative;
-        }
-
-        .about-badge {
-            display: inline-block;
-            background: linear-gradient(45deg, var(--primary-blue), var(--primary-light));
-            color: white;
-            padding: 0.8rem 1.5rem;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 8px 32px rgba(0, 180, 216, 0.3);
-            animation: pulseBadge 2s infinite;
+          grid-template-columns: 1fr;
+          text-align: center;
         }
 
         .about-main-title {
-            font-size: 3.5rem;
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(to right, var(--light) 30%, var(--primary-light));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            position: relative;
-            font-family: 'Almarai', sans-serif;
+          font-size: 2.8rem;
+        }
+
+        .about-title {
+          font-size: 2.8rem;
         }
 
         .about-main-title::after {
-            content: "";
-            position: absolute;
-            bottom: -10px;
-            right: 0;
-            width: 200px;
-            height: 4px;
-            background: linear-gradient(to right, var(--primary-blue), var(--primary-light));
-            border-radius: 2px;
-        }
-
-        .about-description {
-            font-size: 1.2rem;
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 2rem;
-            line-height: 1.8;
-            font-family: 'Almarai', sans-serif;
-        }
-
-        .about-stats {
-            display: flex;
-            gap: 3rem;
-            margin-top: 3rem;
-        }
-
-        .about-stat-item {
-            text-align: center;
-        }
-
-        .about-stat-number {
-            font-size: 2.5rem;
-            font-weight: 800;
-            background: linear-gradient(to bottom, var(--light), var(--primary-light));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            line-height: 1;
-            position: relative;
-        }
-
-        .about-stat-number::after {
-            content: "+";
-            position: absolute;
-            font-size: 1.5rem;
-            color: var(--primary-blue);
-        }
-
-        .about-stat-label {
-            font-size: 0.9rem;
-            color: var(--gray);
-            margin-top: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .about-visual {
-            position: relative;
-        }
-
-        .about-visual-container {
-            position: relative;
-            width: 100%;
-            height: 400px;
-        }
-
-        .about-orb {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(40px);
-            animation: rotateOrb 20s linear infinite;
-        }
-
-        .about-orb-1 {
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle at 30% 30%, var(--primary-blue), transparent 70%);
-            top: 50px;
-            right: 50px;
-            animation-delay: 0s;
-        }
-
-        .about-orb-2 {
-            width: 200px;
-            height: 200px;
-            background: radial-gradient(circle at 70% 70%, #ff6b6b, transparent 70%);
-            top: 100px;
-            right: 100px;
-            animation-delay: 5s;
-        }
-
-        .about-floating-cube {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 250px;
-            height: 250px;
-            perspective: 1000px;
-        }
-
-        .about-cube {
-            width: 100%;
-            height: 100%;
-            position: relative;
-            transform-style: preserve-3d;
-            animation: rotateCube 20s infinite linear;
-        }
-
-        .about-face {
-            position: absolute;
-            width: 250px;
-            height: 250px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: var(--primary-blue);
-        }
-
-        .about-front { transform: translateZ(125px); }
-        .about-back { transform: rotateY(180deg) translateZ(125px); }
-        .about-right { transform: rotateY(90deg) translateZ(125px); }
-        .about-left { transform: rotateY(-90deg) translateZ(125px); }
-        .about-top { transform: rotateX(90deg) translateZ(125px); }
-        .about-bottom { transform: rotateX(-90deg) translateZ(125px); }
-
-        .values-section {
-            padding: 6rem 5%;
-            background: linear-gradient(135deg, var(--dark-blue) 0%, #111827 100%);
-            position: relative;
-        }
-
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .value-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: var(--radius);
-            padding: 2.5rem 2rem;
-            backdrop-filter: blur(10px);
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .value-card:hover {
-            transform: translateY(-10px);
-            border-color: rgba(0, 180, 216, 0.3);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-        }
-
-        .value-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(45deg, var(--primary-blue), var(--primary-light));
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            font-size: 2rem;
-            color: white;
-            box-shadow: 0 8px 32px rgba(0, 180, 216, 0.3);
-        }
-
-        .value-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--light);
-            font-family: 'Almarai', sans-serif;
-        }
-
-        .value-description {
-            color: rgba(255, 255, 255, 0.7);
-            line-height: 1.6;
-            font-family: 'Almarai', sans-serif;
-        }
-
-        /* قسم الخدمات الجديد */
-        .services-section {
-            padding: 6rem 5%;
-            background-color: #f5f7ff;
-            position: relative;
-        }
-
-        .services-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .services-header h2 {
-            font-size: 3rem;
-            color: var(--secondary);
-            margin-bottom: 1rem;
-            position: relative;
-            display: inline-block;
-            font-family: 'Tajawal', sans-serif;
-        }
-
-        .services-header h2::after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            right: 50%;
-            transform: translateX(50%);
-            width: 100px;
-            height: 5px;
-            background: linear-gradient(to right, var(--primary), var(--accent));
-            border-radius: 5px;
-            animation: expandWidth 1.5s ease-out forwards;
-        }
-
-        .services-header p {
-            font-size: 1.2rem;
-            color: var(--gray);
-            max-width: 600px;
-            margin: 2rem auto;
-            font-family: 'Tajawal', sans-serif;
+          right: 50%;
+          transform: translateX(50%);
         }
 
         .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 2.5rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .service-card {
-            background-color: white;
-            border-radius: var(--radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            position: relative;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            border-top: 5px solid var(--primary);
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeUp 0.8s ease-out forwards;
-        }
-
-        .service-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .service-icon {
-            height: 200px;
-            background: linear-gradient(135deg, rgba(67, 97, 238, 0.1) 0%, rgba(247, 37, 133, 0.1) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-icon i {
-            font-size: 4rem;
-            color: var(--primary);
-            z-index: 2;
-            transition: var(--transition);
-        }
-
-        .service-card:hover .service-icon i {
-            transform: scale(1.2) rotate(10deg);
-        }
-
-        .service-icon::after {
-            content: '';
-            position: absolute;
-            width: 150px;
-            height: 150px;
-            background: linear-gradient(135deg, rgba(67, 97, 238, 0.2) 0%, rgba(247, 37, 133, 0.2) 100%);
-            border-radius: 50%;
-            z-index: 1;
-            animation: float 8s infinite ease-in-out;
-        }
-
-        .service-content {
-            padding: 2rem;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .service-content h3 {
-            font-size: 1.5rem;
-            color: var(--secondary);
-            margin-bottom: 1rem;
-            transition: var(--transition);
-            font-family: 'Tajawal', sans-serif;
-        }
-
-        .service-card:hover .service-content h3 {
-            color: var(--primary);
-        }
-
-        .service-content p {
-            color: var(--gray);
-            margin-bottom: 1.5rem;
-            flex-grow: 1;
-            font-family: 'Tajawal', sans-serif;
-        }
-
-        .service-features {
-            margin-bottom: 1.5rem;
-        }
-
-        .service-features li {
-            color: var(--dark);
-            margin-bottom: 0.5rem;
-            padding-right: 1.5rem;
-            position: relative;
-            font-family: 'Tajawal', sans-serif;
-        }
-
-        .service-features li::before {
-            content: '✓';
-            position: absolute;
-            right: 0;
-            color: var(--accent);
-            font-weight: bold;
-        }
-
-        .service-link {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            background: linear-gradient(to left, var(--primary), var(--secondary));
-            color: white;
-            text-decoration: none;
-            padding: 0.8rem 1.5rem;
-            border-radius: 30px;
-            font-weight: 600;
-            transition: var(--transition);
-            align-self: flex-start;
-            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
-            margin-top: auto;
-            font-family: 'Tajawal', sans-serif;
-        }
-
-        .service-link:hover {
-            transform: translateX(-5px);
-            background: linear-gradient(to left, var(--secondary), var(--primary));
-            box-shadow: 0 8px 20px rgba(67, 97, 238, 0.4);
-            gap: 1rem;
-        }
-
-        .service-link i {
-            transition: var(--transition);
-        }
-
-        .service-link:hover i {
-            transform: translateX(-5px);
-        }
-
-        /* قسم كيفية العمل */
-        .process-section {
-            margin-bottom: 5rem;
-            padding: 0 5%;
-            max-width: 1400px;
-            margin: 4rem auto;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            color: var(--secondary);
-            margin-bottom: 3rem;
-            position: relative;
-            font-family: 'Tajawal', sans-serif;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            right: 50%;
-            transform: translateX(50%);
-            width: 80px;
-            height: 4px;
-            background-color: var(--accent);
-            border-radius: 2px;
+          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         }
 
         .process-steps {
-            display: flex;
-            justify-content: space-between;
-            position: relative;
-            margin-top: 4rem;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 3rem;
         }
 
         .process-steps::before {
-            content: '';
-            position: absolute;
-            top: 50px;
-            right: 0;
-            width: 100%;
-            height: 3px;
-            background-color: #e9ecef;
-            z-index: 1;
+          display: none;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .about-main-title {
+          font-size: 2.3rem;
         }
 
-        .process-step {
-            text-align: center;
-            position: relative;
-            z-index: 2;
-            flex: 1;
-            max-width: 200px;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeUp 0.8s ease-out forwards;
+        .about-title {
+          font-size: 2.3rem;
         }
 
-        .step-number {
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin: 0 auto 1.5rem;
-            box-shadow: 0 10px 20px rgba(67, 97, 238, 0.3);
-            transition: var(--transition);
+        .about-stats {
+          flex-direction: column;
+          gap: 2rem;
         }
 
-        .process-step:hover .step-number {
-            transform: scale(1.1);
-            background: linear-gradient(135deg, var(--accent), var(--primary));
+        .about-visual-container {
+          height: 300px;
         }
 
-        .step-content h4 {
-            font-size: 1.3rem;
-            color: var(--secondary);
-            margin-bottom: 0.8rem;
-            font-family: 'Tajawal', sans-serif;
+        .about-floating-cube {
+          width: 200px;
+          height: 200px;
         }
 
-        .step-content p {
-            color: var(--gray);
-            font-size: 0.95rem;
-            font-family: 'Tajawal', sans-serif;
+        .about-face {
+          width: 200px;
+          height: 200px;
+          font-size: 2.5rem;
         }
 
-        /* الأنيميشن */
-        @keyframes pulseBadge {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+        .about-front {
+          transform: translateZ(100px);
+        }
+        .about-back {
+          transform: rotateY(180deg) translateZ(100px);
+        }
+        .about-right {
+          transform: rotateY(90deg) translateZ(100px);
+        }
+        .about-left {
+          transform: rotateY(-90deg) translateZ(100px);
+        }
+        .about-top {
+          transform: rotateX(90deg) translateZ(100px);
+        }
+        .about-bottom {
+          transform: rotateX(-90deg) translateZ(100px);
         }
 
-        @keyframes rotateOrb {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        .services-grid {
+          grid-template-columns: 1fr;
+          max-width: 500px;
+          margin-right: auto;
+          margin-left: auto;
         }
 
-        @keyframes rotateCube {
-            0% { transform: rotateX(0) rotateY(0) rotateZ(0); }
-            100% { transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg); }
+        .services-header h2 {
+          font-size: 2.5rem;
         }
 
-        @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .section-title {
+          font-size: 2rem;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .about-main-title {
+          font-size: 2rem;
         }
 
-        @keyframes expandWidth {
-            from { width: 0; }
-            to { width: 100px; }
+        .about-title {
+          font-size: 2rem;
         }
 
-        @keyframes float {
-            0% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(180deg); }
-            100% { transform: translateY(0) rotate(360deg); }
+        .about-stat-number {
+          font-size: 2rem;
         }
 
-        .highlight {
-            background: linear-gradient(to right, var(--accent), var(--primary));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            font-weight: 700;
+        .values-grid {
+          grid-template-columns: 1fr;
         }
 
-        /* تصميم متجاوب */
-        @media (max-width: 992px) {
-            .about-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            
-            .about-main-title {
-                font-size: 2.8rem;
-            }
-            
-            .about-title {
-                font-size: 2.8rem;
-            }
-            
-            .about-main-title::after {
-                right: 50%;
-                transform: translateX(50%);
-            }
-            
-            .services-grid {
-                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            }
-            
-            .process-steps {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 3rem;
-            }
-            
-            .process-steps::before {
-                display: none;
-            }
+        .services-header h2 {
+          font-size: 2rem;
         }
-
-        @media (max-width: 768px) {
-            .about-main-title {
-                font-size: 2.3rem;
-            }
-            
-            .about-title {
-                font-size: 2.3rem;
-            }
-            
-            .about-stats {
-                flex-direction: column;
-                gap: 2rem;
-            }
-            
-            .about-visual-container {
-                height: 300px;
-            }
-            
-            .about-floating-cube {
-                width: 200px;
-                height: 200px;
-            }
-            
-            .about-face {
-                width: 200px;
-                height: 200px;
-                font-size: 2.5rem;
-            }
-            
-            .about-front { transform: translateZ(100px); }
-            .about-back { transform: rotateY(180deg) translateZ(100px); }
-            .about-right { transform: rotateY(90deg) translateZ(100px); }
-            .about-left { transform: rotateY(-90deg) translateZ(100px); }
-            .about-top { transform: rotateX(90deg) translateZ(100px); }
-            .about-bottom { transform: rotateX(-90deg) translateZ(100px); }
-            
-            .services-grid {
-                grid-template-columns: 1fr;
-                max-width: 500px;
-                margin-right: auto;
-                margin-left: auto;
-            }
-            
-            .services-header h2 {
-                font-size: 2.5rem;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .about-main-title {
-                font-size: 2rem;
-            }
-            
-            .about-title {
-                font-size: 2rem;
-            }
-            
-            .about-stat-number {
-                font-size: 2rem;
-            }
-            
-            .values-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .services-header h2 {
-                font-size: 2rem;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Header -->
     <header id="main-header">
-        <div class="container header-container">
-            <a href="index.html" class="logo">
-                <i class="fas fa-robot"></i>
-                <span>إوت بوت</span>
-            </a>
+      <div class="container header-container">
+        <a href="index.html" class="logo">
+          <i class="fas fa-robot"></i>
+          <span>إوت بوت</span>
+        </a>
 
-            <button class="menu-toggle" id="menu-toggle">
-                <i class="fas fa-bars"></i>
-            </button>
+        <button class="menu-toggle" id="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </button>
 
-            <nav>
-                <ul class="nav-links" id="nav-links">
-                    <li><a href="index.html">الرئيسية</a></li>
-                    <li><a href="projects.html">المشاريع</a></li>
-                
-                    <li><a href="join.html">الانضمام والتطوع</a></li>
-                </ul>
-            </nav>
-        </div>
+        <nav>
+          <ul class="nav-links" id="nav-links">
+            <li><a href="/">الرئيسية</a></li>
+            <li><a href="/projects">المشاريع</a></li>
+            <li><a href="/join">الانضمام والتطوع</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="container">
-            <h2>مرحباً بكم في فريق إوت بوت</h2>
-            <p>
-                نبتكر الحلول التقنية ونحقق الأثر المجتمعي من خلال مشاريع متميزة تجمع
-                بين الإبداع والتقنية لخدمة المجتمع.
-            </p>
-            <a href="#about" class="btn-primary">تعرف علينا</a>
-        </div>
+      <div class="container">
+        <h2>مرحباً بكم في فريق إوت بوت</h2>
+        <p>
+          نبتكر الحلول التقنية ونحقق الأثر المجتمعي من خلال مشاريع متميزة تجمع
+          بين الإبداع والتقنية لخدمة المجتمع.
+        </p>
+        <a href="#about" class="btn-primary">تعرف علينا</a>
+      </div>
     </section>
 
     <!-- Latest News -->
     <section class="news">
-        <div class="container">
-            <h3 class="section-title">أحدث الأخبار</h3>
-            <div class="news-cards">
-                <div class="card" id="card1">
-                    <h4>إطلاق مشروع جديد للذكاء الاصطناعي</h4>
-                    <p>
-                        أطلق فريق إوت بوت مشروعًا جديدًا يستخدم الذكاء الاصطناعي لتحليل
-                        البيانات البيئية والمساعدة في حلول الاستدامة.
-                    </p>
-                    <a href="#">اقرأ المزيد <i class="fas fa-arrow-left"></i></a>
-                </div>
-                <div class="card" id="card2">
-                    <h4>فوز الفريق بجائزة الابتكار التقني</h4>
-                    <p>
-                        فاز فريق إوت بوت بجائزة الابتكار التقني على مستوى المنطقة عن مشروع
-                        تطوير تطبيقات تعليمية للأطفال.
-                    </p>
-                    <a href="#">اقرأ المزيد <i class="fas fa-arrow-left"></i></a>
-                </div>
-                <div class="card" id="card3">
-                    <h4>ورشة عمل حول برمجة الروبوتات</h4>
-                    <p>
-                        نظم الفريق ورشة عمل مجانية لتعليم أساسيات برمجة الروبوتات
-                        للمبتدئين، بمشاركة أكثر من 100 متدرب.
-                    </p>
-                    <a href="#">اقرأ المزيد <i class="fas fa-arrow-left"></i></a>
-                </div>
-            </div>
+      <div class="container">
+        <h3 class="section-title">أحدث الأخبار</h3>
+        <div class="news-cards">
+          <div class="card" id="card1">
+            <h4>إطلاق مشروع جديد للذكاء الاصطناعي</h4>
+            <p>
+              أطلق فريق إوت بوت مشروعًا جديدًا يستخدم الذكاء الاصطناعي لتحليل
+              البيانات البيئية والمساعدة في حلول الاستدامة.
+            </p>
+            <a href="#">اقرأ المزيد <i class="fas fa-arrow-left"></i></a>
+          </div>
+          <div class="card" id="card2">
+            <h4>فوز الفريق بجائزة الابتكار التقني</h4>
+            <p>
+              فاز فريق إوت بوت بجائزة الابتكار التقني على مستوى المنطقة عن مشروع
+              تطوير تطبيقات تعليمية للأطفال.
+            </p>
+            <a href="#">اقرأ المزيد <i class="fas fa-arrow-left"></i></a>
+          </div>
+          <div class="card" id="card3">
+            <h4>ورشة عمل حول برمجة الروبوتات</h4>
+            <p>
+              نظم الفريق ورشة عمل مجانية لتعليم أساسيات برمجة الروبوتات
+              للمبتدئين، بمشاركة أكثر من 100 متدرب.
+            </p>
+            <a href="#">اقرأ المزيد <i class="fas fa-arrow-left"></i></a>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- About Us Section -->
     <section class="about-section" id="about">
-        <div class="about-header">
-            <h2 class="about-title">من نحن</h2>
-            <p class="about-subtitle">
-                نحن أكثر من مجرد فريق تقني، نحن رواد في تحويل الأفكار إلى واقع رقمي
-                ملموس
-            </p>
+      <div class="about-header">
+        <h2 class="about-title">من نحن</h2>
+        <p class="about-subtitle">
+          نحن أكثر من مجرد فريق تقني، نحن رواد في تحويل الأفكار إلى واقع رقمي
+          ملموس
+        </p>
+      </div>
+
+      <div class="about-content">
+        <div class="about-text">
+          <span class="about-badge">مبتكرون في التقنية</span>
+          <h3 class="about-main-title">صناعة المستقبل الرقمي</h3>
+          <p class="about-description">
+            في إوت بوت، نحن فريق من المبتكرين والمطورين المتحمسين الذين يجمعون
+            بين الفن والتقنية لخلق تجارب استثنائية. نؤمن بأن التكنولوجيا يجب أن
+            تكون في خدمة الإنسان، ونسعى دائمًا لابتكار حلول ذكية تحسن حياة الناس
+            وتدفع عجلة التطور.
+          </p>
+          <p class="about-description">
+            منذ تأسيسنا، عملنا على أكثر من 150 مشروعًا تقنيًا ناجحًا، ونساهم
+            بشكل فاعل في بناء مجتمع رقمي متطور يواكب متطلبات العصر الحديث.
+          </p>
+
+          <div class="about-stats">
+            <div class="about-stat-item">
+              <div class="about-stat-number" data-target="150">0</div>
+              <div class="about-stat-label">مشروع مكتمل</div>
+            </div>
+            <div class="about-stat-item">
+              <div class="about-stat-number" data-target="75">0</div>
+              <div class="about-stat-label">عميل سعيد</div>
+            </div>
+            <div class="about-stat-item">
+              <div class="about-stat-number" data-target="25">0</div>
+              <div class="about-stat-label">جائزة فوز</div>
+            </div>
+          </div>
         </div>
 
-        <div class="about-content">
-            <div class="about-text">
-                <span class="about-badge">مبتكرون في التقنية</span>
-                <h3 class="about-main-title">صناعة المستقبل الرقمي</h3>
-                <p class="about-description">
-                    في إوت بوت، نحن فريق من المبتكرين والمطورين المتحمسين الذين يجمعون
-                    بين الفن والتقنية لخلق تجارب استثنائية. نؤمن بأن التكنولوجيا يجب أن
-                    تكون في خدمة الإنسان، ونسعى دائمًا لابتكار حلول ذكية تحسن حياة الناس
-                    وتدفع عجلة التطور.
-                </p>
-                <p class="about-description">
-                    منذ تأسيسنا، عملنا على أكثر من 150 مشروعًا تقنيًا ناجحًا، ونساهم
-                    بشكل فاعل في بناء مجتمع رقمي متطور يواكب متطلبات العصر الحديث.
-                </p>
+        <div class="about-visual">
+          <div class="about-visual-container">
+            <div class="about-orb about-orb-1"></div>
+            <div class="about-orb about-orb-2"></div>
 
-                <div class="about-stats">
-                    <div class="about-stat-item">
-                        <div class="about-stat-number" data-target="150">0</div>
-                        <div class="about-stat-label">مشروع مكتمل</div>
-                    </div>
-                    <div class="about-stat-item">
-                        <div class="about-stat-number" data-target="75">0</div>
-                        <div class="about-stat-label">عميل سعيد</div>
-                    </div>
-                    <div class="about-stat-item">
-                        <div class="about-stat-number" data-target="25">0</div>
-                        <div class="about-stat-label">جائزة فوز</div>
-                    </div>
+            <div class="about-floating-cube">
+              <div class="about-cube">
+                <div class="about-face about-front">
+                  <i class="fas fa-brain"></i>
                 </div>
-            </div>
-
-            <div class="about-visual">
-                <div class="about-visual-container">
-                    <div class="about-orb about-orb-1"></div>
-                    <div class="about-orb about-orb-2"></div>
-
-                    <div class="about-floating-cube">
-                        <div class="about-cube">
-                            <div class="about-face about-front">
-                                <i class="fas fa-brain"></i>
-                            </div>
-                            <div class="about-face about-back">
-                                <i class="fas fa-code"></i>
-                            </div>
-                            <div class="about-face about-right">
-                                <i class="fas fa-robot"></i>
-                            </div>
-                            <div class="about-face about-left">
-                                <i class="fas fa-cogs"></i>
-                            </div>
-                            <div class="about-face about-top">
-                                <i class="fas fa-lightbulb"></i>
-                            </div>
-                            <div class="about-face about-bottom">
-                                <i class="fas fa-rocket"></i>
-                            </div>
-                        </div>
-                    </div>
+                <div class="about-face about-back">
+                  <i class="fas fa-code"></i>
                 </div>
+                <div class="about-face about-right">
+                  <i class="fas fa-robot"></i>
+                </div>
+                <div class="about-face about-left">
+                  <i class="fas fa-cogs"></i>
+                </div>
+                <div class="about-face about-top">
+                  <i class="fas fa-lightbulb"></i>
+                </div>
+                <div class="about-face about-bottom">
+                  <i class="fas fa-rocket"></i>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Our Values -->
     <section class="values-section">
-        <div class="about-header">
-            <h2 class="about-title">قيمنا الأساسية</h2>
-            <p class="about-subtitle">
-                الأساس الذي نبنى عليه كل إنجاز وكل علاقة مع عملائنا وشركائنا
-            </p>
+      <div class="about-header">
+        <h2 class="about-title">قيمنا الأساسية</h2>
+        <p class="about-subtitle">
+          الأساس الذي نبنى عليه كل إنجاز وكل علاقة مع عملائنا وشركائنا
+        </p>
+      </div>
+
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-lightbulb"></i>
+          </div>
+          <h3 class="value-title">ابتكار بلا حدود</h3>
+          <p class="value-description">
+            ندفع حدود الإمكانيات التقنية لنخلق حلولاً غير مسبوقة. كل مشروع هو
+            فرصة للابتكار والتجديد.
+          </p>
         </div>
 
-        <div class="values-grid">
-            <div class="value-card">
-                <div class="value-icon">
-                    <i class="fas fa-lightbulb"></i>
-                </div>
-                <h3 class="value-title">ابتكار بلا حدود</h3>
-                <p class="value-description">
-                    ندفع حدود الإمكانيات التقنية لنخلق حلولاً غير مسبوقة. كل مشروع هو
-                    فرصة للابتكار والتجديد.
-                </p>
-            </div>
-
-            <div class="value-card">
-                <div class="value-icon">
-                    <i class="fas fa-handshake"></i>
-                </div>
-                <h3 class="value-title">شراكة استراتيجية</h3>
-                <p class="value-description">
-                    نعمل كجزء من فريق عملائنا، نفهم تطلعاتهم ونتشارك معهم الرحلة نحو
-                    تحقيق الأهداف.
-                </p>
-            </div>
-
-            <div class="value-card">
-                <div class="value-icon">
-                    <i class="fas fa-gem"></i>
-                </div>
-                <h3 class="value-title">جودة استثنائية</h3>
-                <p class="value-description">
-                    لا نقبل سوى بالأفضل. كل تفصيل يمر بمراحل ضبط جودة صارمة لضمان
-                    التميز.
-                </p>
-            </div>
-
-            <div class="value-card">
-                <div class="value-icon">
-                    <i class="fas fa-heart"></i>
-                </div>
-                <h3 class="value-title">تأثير إيجابي</h3>
-                <p class="value-description">
-                    نساهم في بناء مستقبل أفضل من خلال حلول تقنية تحسن حياة الناس وتدفع
-                    عجلة التطور.
-                </p>
-            </div>
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-handshake"></i>
+          </div>
+          <h3 class="value-title">شراكة استراتيجية</h3>
+          <p class="value-description">
+            نعمل كجزء من فريق عملائنا، نفهم تطلعاتهم ونتشارك معهم الرحلة نحو
+            تحقيق الأهداف.
+          </p>
         </div>
+
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-gem"></i>
+          </div>
+          <h3 class="value-title">جودة استثنائية</h3>
+          <p class="value-description">
+            لا نقبل سوى بالأفضل. كل تفصيل يمر بمراحل ضبط جودة صارمة لضمان
+            التميز.
+          </p>
+        </div>
+
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-heart"></i>
+          </div>
+          <h3 class="value-title">تأثير إيجابي</h3>
+          <p class="value-description">
+            نساهم في بناء مستقبل أفضل من خلال حلول تقنية تحسن حياة الناس وتدفع
+            عجلة التطور.
+          </p>
+        </div>
+      </div>
     </section>
 
     <!-- Services Section -->
     <section class="services-section" id="services">
-        <div class="services-header">
-            <h2>خدماتنا <span class="highlight">المتميزة</span></h2>
-            <p>نقدم مجموعة واسعة من الخدمات التقنية المتكاملة التي تساعدك على النمو الرقمي وتحقيق أهدافك باحترافية عالية.</p>
+      <div class="services-header">
+        <h2>خدماتنا <span class="highlight">المتميزة</span></h2>
+        <p>
+          نقدم مجموعة واسعة من الخدمات التقنية المتكاملة التي تساعدك على النمو
+          الرقمي وتحقيق أهدافك باحترافية عالية.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <!-- خدمة تطوير المواقع -->
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-code"></i>
+          </div>
+          <div class="service-content">
+            <h3>تطوير مواقع الويب</h3>
+            <p>
+              نصمم ونطور مواقع ويب احترافية متجاوبة مع جميع الأجهزة، باستخدام
+              أحدث التقنيات وأفضل ممارسات التصميم لضمان تجربة مستخدم استثنائية.
+            </p>
+
+            <div class="service-features">
+              <li>تصميم متجاوب</li>
+              <li>تحسين محركات البحث</li>
+              <li>أداء عالي وسريع</li>
+              <li>واجهة مستخدم جذابة</li>
+            </div>
+
+            <a href="#contact" class="service-link">
+              طلب الخدمة
+              <i class="fas fa-arrow-left"></i>
+            </a>
+          </div>
         </div>
 
-        <div class="services-grid">
-            <!-- خدمة تطوير المواقع -->
-            <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-code"></i>
-                </div>
-                <div class="service-content">
-                    <h3>تطوير مواقع الويب</h3>
-                    <p>نصمم ونطور مواقع ويب احترافية متجاوبة مع جميع الأجهزة، باستخدام أحدث التقنيات وأفضل ممارسات التصميم لضمان تجربة مستخدم استثنائية.</p>
-                    
-                    <div class="service-features">
-                        <li>تصميم متجاوب</li>
-                        <li>تحسين محركات البحث</li>
-                        <li>أداء عالي وسريع</li>
-                        <li>واجهة مستخدم جذابة</li>
-                    </div>
-                    
-                    <a href="#contact" class="service-link">
-                        طلب الخدمة
-                        <i class="fas fa-arrow-left"></i>
-                    </a>
-                </div>
+        <!-- خدمة الأنظمة البرمجية -->
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-cogs"></i>
+          </div>
+          <div class="service-content">
+            <h3>أنظمة برمجية مخصصة</h3>
+            <p>
+              نطور أنظمة برمجية متكاملة مخصصة حسب احتياجات عملك، بدءاً من نظم
+              إدارة المحتوى إلى الحلول المؤسسية المتقدمة.
+            </p>
+
+            <div class="service-features">
+              <li>تطوير مخصص حسب الطلب</li>
+              <li>تكامل مع أنظمة أخرى</li>
+              <li>أمان عالي للحماية</li>
+              <li>دعم فني متواصل</li>
             </div>
 
-            <!-- خدمة الأنظمة البرمجية -->
-            <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-cogs"></i>
-                </div>
-                <div class="service-content">
-                    <h3>أنظمة برمجية مخصصة</h3>
-                    <p>نطور أنظمة برمجية متكاملة مخصصة حسب احتياجات عملك، بدءاً من نظم إدارة المحتوى إلى الحلول المؤسسية المتقدمة.</p>
-                    
-                    <div class="service-features">
-                        <li>تطوير مخصص حسب الطلب</li>
-                        <li>تكامل مع أنظمة أخرى</li>
-                        <li>أمان عالي للحماية</li>
-                        <li>دعم فني متواصل</li>
-                    </div>
-                    
-                    <a href="#contact" class="service-link">
-                        طلب الخدمة
-                        <i class="fas fa-arrow-left"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- خدمة تطبيقات الجوال -->
-            <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-mobile-alt"></i>
-                </div>
-                <div class="service-content">
-                    <h3>تطبيقات الجوال</h3>
-                    <p>نطور تطبيقات جوال مبتكرة لنظامي iOS و Android، مع التركيز على تجربة المستخدم والأداء العالي والأمان المتقدم.</p>
-                    
-                    <div class="service-features">
-                        <li>تطبيقات أصلية ومختلطة</li>
-                        <li>واجهة مستخدم بديهية</li>
-                        <li>تكامل مع APIs</li>
-                        <li>نشر في متاجر التطبيقات</li>
-                    </div>
-                    
-                    <a href="#contact" class="service-link">
-                        طلب الخدمة
-                        <i class="fas fa-arrow-left"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- خدمة الذكاء الاصطناعي -->
-            <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-brain"></i>
-                </div>
-                <div class="service-content">
-                    <h3>حلول الذكاء الاصطناعي</h3>
-                    <p>نطور حلول ذكاء اصطناعي وتعلم آلة متقدمة تساعدك على أتمتة العمليات وتحليل البيانات واتخاذ قرارات أكثر ذكاءً.</p>
-                    
-                    <div class="service-features">
-                        <li>نماذج تعلم آلة مخصصة</li>
-                        <li>معالجة اللغة الطبيعية</li>
-                        <li>رؤية حاسوبية</li>
-                        <li>أنظمة توصيل ذكية</li>
-                    </div>
-                    
-                    <a href="#contact" class="service-link">
-                        طلب الخدمة
-                        <i class="fas fa-arrow-left"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- خدمة التجارة الإلكترونية -->
-            <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-shopping-cart"></i>
-                </div>
-                <div class="service-content">
-                    <h3>حلول التجارة الإلكترونية</h3>
-                    <p>ننشئ متاجر إلكترونية متكاملة مع أنظمة دفع آمنة وإدارة مخزون ومتابعة طلبات لتحقيق نمو مبيعاتك عبر الإنترنت.</p>
-                    
-                    <div class="service-features">
-                        <li>متاجر إلكترونية متكاملة</li>
-                        <li>أنظمة دفع آمنة</li>
-                        <li>إدارة مخزون ومتابعة</li>
-                        <li>تحليلات وتقارير مفصلة</li>
-                    </div>
-                    
-                    <a href="#contact" class="service-link">
-                        طلب الخدمة
-                        <i class="fas fa-arrow-left"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- خدمة التسويق الرقمي -->
-            <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-bullhorn"></i>
-                </div>
-                <div class="service-content">
-                    <h3>التسويق الرقمي</h3>
-                    <p>نقدم استراتيجيات تسويق رقمي متكاملة تشمل تحسين محركات البحث، التسويق عبر وسائل التواصل الاجتماعي، وإعلانات مدفوعة مستهدفة.</p>
-                    
-                    <div class="service-features">
-                        <li>تحسين محركات البحث SEO</li>
-                        <li>إدارة وسائل التواصل الاجتماعي</li>
-                        <li>إعلانات مدفوعة مستهدفة</li>
-                        <li>تحليلات أداء الحملات</li>
-                    </div>
-                    
-                    <a href="#contact" class="service-link">
-                        طلب الخدمة
-                        <i class="fas fa-arrow-left"></i>
-                    </a>
-                </div>
-            </div>
+            <a href="#contact" class="service-link">
+              طلب الخدمة
+              <i class="fas fa-arrow-left"></i>
+            </a>
+          </div>
         </div>
 
-        <!-- قسم كيفية العمل -->
-        <div class="process-section">
-            <h3 class="section-title">كيفية <span class="highlight">العمل</span></h3>
-            
-            <div class="process-steps">
-                <div class="process-step">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h4>التخطيط والتحليل</h4>
-                        <p>نفهم احتياجاتك وأهدافك بوضوح ونضع خطة عمل مفصلة.</p>
-                    </div>
-                </div>
-                
-                <div class="process-step">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h4>التصميم والتطوير</h4>
-                        <p>نصمم الحل الأمثل ونطوره باستخدام أحدث التقنيات.</p>
-                    </div>
-                </div>
-                
-                <div class="process-step">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h4>الاختبار والتجربة</h4>
-                        <p>نختبر الحل بدقة للتأكد من جودته وسلامة أدائه.</p>
-                    </div>
-                </div>
-                
-                <div class="process-step">
-                    <div class="step-number">4</div>
-                    <div class="step-content">
-                        <h4>النشر والدعم</h4>
-                        <p>ننشر الحل وندعمه بشكل مستمر لضمان استمراريته.</p>
-                    </div>
-                </div>
+        <!-- خدمة تطبيقات الجوال -->
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <div class="service-content">
+            <h3>تطبيقات الجوال</h3>
+            <p>
+              نطور تطبيقات جوال مبتكرة لنظامي iOS و Android، مع التركيز على
+              تجربة المستخدم والأداء العالي والأمان المتقدم.
+            </p>
+
+            <div class="service-features">
+              <li>تطبيقات أصلية ومختلطة</li>
+              <li>واجهة مستخدم بديهية</li>
+              <li>تكامل مع APIs</li>
+              <li>نشر في متاجر التطبيقات</li>
             </div>
+
+            <a href="#contact" class="service-link">
+              طلب الخدمة
+              <i class="fas fa-arrow-left"></i>
+            </a>
+          </div>
         </div>
+
+        <!-- خدمة الذكاء الاصطناعي -->
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-brain"></i>
+          </div>
+          <div class="service-content">
+            <h3>حلول الذكاء الاصطناعي</h3>
+            <p>
+              نطور حلول ذكاء اصطناعي وتعلم آلة متقدمة تساعدك على أتمتة العمليات
+              وتحليل البيانات واتخاذ قرارات أكثر ذكاءً.
+            </p>
+
+            <div class="service-features">
+              <li>نماذج تعلم آلة مخصصة</li>
+              <li>معالجة اللغة الطبيعية</li>
+              <li>رؤية حاسوبية</li>
+              <li>أنظمة توصيل ذكية</li>
+            </div>
+
+            <a href="#contact" class="service-link">
+              طلب الخدمة
+              <i class="fas fa-arrow-left"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- خدمة التجارة الإلكترونية -->
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-shopping-cart"></i>
+          </div>
+          <div class="service-content">
+            <h3>حلول التجارة الإلكترونية</h3>
+            <p>
+              ننشئ متاجر إلكترونية متكاملة مع أنظمة دفع آمنة وإدارة مخزون
+              ومتابعة طلبات لتحقيق نمو مبيعاتك عبر الإنترنت.
+            </p>
+
+            <div class="service-features">
+              <li>متاجر إلكترونية متكاملة</li>
+              <li>أنظمة دفع آمنة</li>
+              <li>إدارة مخزون ومتابعة</li>
+              <li>تحليلات وتقارير مفصلة</li>
+            </div>
+
+            <a href="#contact" class="service-link">
+              طلب الخدمة
+              <i class="fas fa-arrow-left"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- خدمة التسويق الرقمي -->
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-bullhorn"></i>
+          </div>
+          <div class="service-content">
+            <h3>التسويق الرقمي</h3>
+            <p>
+              نقدم استراتيجيات تسويق رقمي متكاملة تشمل تحسين محركات البحث،
+              التسويق عبر وسائل التواصل الاجتماعي، وإعلانات مدفوعة مستهدفة.
+            </p>
+
+            <div class="service-features">
+              <li>تحسين محركات البحث SEO</li>
+              <li>إدارة وسائل التواصل الاجتماعي</li>
+              <li>إعلانات مدفوعة مستهدفة</li>
+              <li>تحليلات أداء الحملات</li>
+            </div>
+
+            <a href="#contact" class="service-link">
+              طلب الخدمة
+              <i class="fas fa-arrow-left"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- قسم كيفية العمل -->
+      <div class="process-section">
+        <h3 class="section-title">
+          كيفية <span class="highlight">العمل</span>
+        </h3>
+
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h4>التخطيط والتحليل</h4>
+              <p>نفهم احتياجاتك وأهدافك بوضوح ونضع خطة عمل مفصلة.</p>
+            </div>
+          </div>
+
+          <div class="process-step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h4>التصميم والتطوير</h4>
+              <p>نصمم الحل الأمثل ونطوره باستخدام أحدث التقنيات.</p>
+            </div>
+          </div>
+
+          <div class="process-step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h4>الاختبار والتجربة</h4>
+              <p>نختبر الحل بدقة للتأكد من جودته وسلامة أدائه.</p>
+            </div>
+          </div>
+
+          <div class="process-step">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <h4>النشر والدعم</h4>
+              <p>ننشر الحل وندعمه بشكل مستمر لضمان استمراريته.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Projects -->
     <section class="projects">
-        <div class="container">
-            <h3 class="section-title">مشاريعنا الجارية</h3>
-            <div class="project-cards">
-                <div class="card" id="card4">
-                    <h4>منصة تعليمية تفاعلية</h4>
-                    <p>
-                        نطور منصة تعليمية تفاعلية تقدم محتوى تعليميًا مجانيًا في مجالات
-                        البرمجة والذكاء الاصطناعي.
-                    </p>
-                    <a href="#">قراءة المزيد <i class="fas fa-arrow-left"></i></a>
-                </div>
-                <div class="card" id="card5">
-                    <h4>تطبيق مراقبة جودة الهواء</h4>
-                    <p>
-                        نعمل على تطوير تطبيق لمراقبة جودة الهواء في المدن الكبرى باستخدام
-                        بيانات حية من محطات المراقبة.
-                    </p>
-                    <a href="#">قراءة المزيد <i class="fas fa-arrow-left"></i></a>
-                </div>
-                <div class="card" id="card6">
-                    <h4>روبوت مساعد للمكفوفين</h4>
-                    <p>
-                        مشروع تطوير روبوت مساعد يعتمد على الذكاء الاصطناعي لمساعدة الأشخاص
-                        ذوي الإعاقة البصرية.
-                    </p>
-                    <a href="#">قراءة المزيد <i class="fas fa-arrow-left"></i></a>
-                </div>
-            </div>
+      <div class="container">
+        <h3 class="section-title">مشاريعنا الجارية</h3>
+        <div class="project-cards">
+          <div class="card" id="card4">
+            <h4>منصة تعليمية تفاعلية</h4>
+            <p>
+              نطور منصة تعليمية تفاعلية تقدم محتوى تعليميًا مجانيًا في مجالات
+              البرمجة والذكاء الاصطناعي.
+            </p>
+            <a href="#">قراءة المزيد <i class="fas fa-arrow-left"></i></a>
+          </div>
+          <div class="card" id="card5">
+            <h4>تطبيق مراقبة جودة الهواء</h4>
+            <p>
+              نعمل على تطوير تطبيق لمراقبة جودة الهواء في المدن الكبرى باستخدام
+              بيانات حية من محطات المراقبة.
+            </p>
+            <a href="#">قراءة المزيد <i class="fas fa-arrow-left"></i></a>
+          </div>
+          <div class="card" id="card6">
+            <h4>روبوت مساعد للمكفوفين</h4>
+            <p>
+              مشروع تطوير روبوت مساعد يعتمد على الذكاء الاصطناعي لمساعدة الأشخاص
+              ذوي الإعاقة البصرية.
+            </p>
+            <a href="#">قراءة المزيد <i class="fas fa-arrow-left"></i></a>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Features -->
     <section class="features">
-        <div class="container">
-            <h3 class="section-title">مميزات الفريق</h3>
-            <ul class="features-list">
-                <li id="feature1">
-                    <i class="fas fa-lightbulb"></i>
-                    <h4>ابتكار</h4>
-                </li>
-                <li id="feature2">
-                    <i class="fas fa-eye"></i>
-                    <h4>شفافية</h4>
-                </li>
-                <li id="feature3">
-                    <i class="fas fa-hands-helping"></i>
-                    <h4>أثر مجتمعي</h4>
-                </li>
-                <li id="feature4">
-                    <i class="fas fa-users"></i>
-                    <h4>عمل جماعي</h4>
-                </li>
-            </ul>
-        </div>
+      <div class="container">
+        <h3 class="section-title">مميزات الفريق</h3>
+        <ul class="features-list">
+          <li id="feature1">
+            <i class="fas fa-lightbulb"></i>
+            <h4>ابتكار</h4>
+          </li>
+          <li id="feature2">
+            <i class="fas fa-eye"></i>
+            <h4>شفافية</h4>
+          </li>
+          <li id="feature3">
+            <i class="fas fa-hands-helping"></i>
+            <h4>أثر مجتمعي</h4>
+          </li>
+          <li id="feature4">
+            <i class="fas fa-users"></i>
+            <h4>عمل جماعي</h4>
+          </li>
+        </ul>
+      </div>
     </section>
 
     <!-- CTA -->
     <section class="cta" id="cta">
-        <div class="container">
-            <h3>هل ترغب بالانضمام إلينا؟</h3>
-            <p>
-                انضم إلى فريقنا من المبتكرين والمطورين لإنشاء حلول تقنية ذات أثر
-                مجتمعي إيجابي.
-            </p>
-            <a href="join.html" class="btn-primary">تطوع الآن</a>
-        </div>
+      <div class="container">
+        <h3>هل ترغب بالانضمام إلينا؟</h3>
+        <p>
+          انضم إلى فريقنا من المبتكرين والمطورين لإنشاء حلول تقنية ذات أثر
+          مجتمعي إيجابي.
+        </p>
+        <a href="join.html" class="btn-primary">تطوع الآن</a>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <a href="index.html" class="logo">
-                    <i class="fas fa-robot"></i>
-                    <span>إوت بوت</span>
-                </a>
+      <div class="container">
+        <div class="footer-content">
+          <a href="index.html" class="logo">
+            <i class="fas fa-robot"></i>
+            <span>إوت بوت</span>
+          </a>
 
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                </div>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
 
-                <p>© 2025 فريق إوت بوت. جميع الحقوق محفوظة.</p>
-            </div>
+          <p>© 2025 فريق إوت بوت. جميع الحقوق محفوظة.</p>
         </div>
+      </div>
     </footer>
 
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            console.log("مرحباً بك في موقع فريق إوت بوت!");
+      document.addEventListener("DOMContentLoaded", () => {
+        console.log("مرحباً بك في موقع فريق إوت بوت!");
 
-            // العناصر التي ستحصل على أنيميشن
-            const animatedElements = [
-                { id: "card1", delay: 0 },
-                { id: "card2", delay: 100 },
-                { id: "card3", delay: 200 },
-                { id: "card4", delay: 0 },
-                { id: "card5", delay: 100 },
-                { id: "card6", delay: 200 },
-                { id: "feature1", delay: 0 },
-                { id: "feature2", delay: 150 },
-                { id: "feature3", delay: 300 },
-                { id: "feature4", delay: 450 },
-                { class: "cta", delay: 0 },
-                { class: "service-card", delay: 0 },
-                { class: "process-step", delay: 0 }
-            ];
+        // العناصر التي ستحصل على أنيميشن
+        const animatedElements = [
+          { id: "card1", delay: 0 },
+          { id: "card2", delay: 100 },
+          { id: "card3", delay: 200 },
+          { id: "card4", delay: 0 },
+          { id: "card5", delay: 100 },
+          { id: "card6", delay: 200 },
+          { id: "feature1", delay: 0 },
+          { id: "feature2", delay: 150 },
+          { id: "feature3", delay: 300 },
+          { id: "feature4", delay: 450 },
+          { class: "cta", delay: 0 },
+          { class: "service-card", delay: 0 },
+          { class: "process-step", delay: 0 },
+        ];
 
-            // إضافة الأنيميشن للعناصر عند التمرير
-            const observer = new IntersectionObserver(
-                (entries) => {
-                    entries.forEach((entry) => {
-                        if (entry.isIntersecting) {
-                            setTimeout(() => {
-                                entry.target.classList.add("animated");
-                            }, entry.target.dataset.delay || 0);
-                        }
-                    });
-                },
-                {
-                    threshold: 0.1,
-                    rootMargin: "0px 0px -50px 0px",
-                }
-            );
-
-            // مراقبة العناصر
-            animatedElements.forEach((item) => {
-                if (item.id) {
-                    const element = document.getElementById(item.id);
-                    if (element) {
-                        element.dataset.delay = item.delay;
-                        observer.observe(element);
-                    }
-                } else if (item.class) {
-                    const elements = document.getElementsByClassName(item.class);
-                    Array.from(elements).forEach((element, index) => {
-                        element.dataset.delay = item.delay + (index * 100);
-                        observer.observe(element);
-                    });
-                }
+        // إضافة الأنيميشن للعناصر عند التمرير
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                setTimeout(() => {
+                  entry.target.classList.add("animated");
+                }, entry.target.dataset.delay || 0);
+              }
             });
+          },
+          {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px",
+          }
+        );
 
-            // تأثير العد للأرقام في قسم من نحن
-            const statNumbers = document.querySelectorAll(".about-stat-number");
-            const statObserver = new IntersectionObserver(
-                (entries) => {
-                    entries.forEach((entry) => {
-                        if (entry.isIntersecting) {
-                            const element = entry.target;
-                            const target = parseInt(element.getAttribute("data-target"));
-                            animateCount(element, 0, target, 2000);
-                            statObserver.unobserve(element);
-                        }
-                    });
-                },
-                { threshold: 0.5 }
-            );
-
-            statNumbers.forEach((stat) => statObserver.observe(stat));
-
-            // تأثير المكعب التفاعلي
-            const cube = document.querySelector(".about-cube");
-            if (cube) {
-                let mouseX = 0;
-                let mouseY = 0;
-                let cubeX = 0;
-                let cubeY = 0;
-
-                document.addEventListener("mousemove", (e) => {
-                    mouseX = e.clientX / window.innerWidth - 0.5;
-                    mouseY = e.clientY / window.innerHeight - 0.5;
-                });
-
-                function animateCube() {
-                    cubeX += (mouseX * 180 - cubeX) * 0.05;
-                    cubeY += (mouseY * 180 - cubeY) * 0.05;
-
-                    cube.style.transform = `rotateX(${cubeY}deg) rotateY(${cubeX}deg)`;
-
-                    requestAnimationFrame(animateCube);
-                }
-
-                animateCube();
+        // مراقبة العناصر
+        animatedElements.forEach((item) => {
+          if (item.id) {
+            const element = document.getElementById(item.id);
+            if (element) {
+              element.dataset.delay = item.delay;
+              observer.observe(element);
             }
-
-            // تأثيرات hover للبطاقات
-            const cards = document.querySelectorAll(".value-card, .service-card");
-            cards.forEach((card) => {
-                card.addEventListener("mouseenter", function () {
-                    if (this.classList.contains('service-card')) {
-                        this.style.transform = "translateY(-15px)";
-                    } else {
-                        this.style.transform = "translateY(-10px)";
-                    }
-                });
-
-                card.addEventListener("mouseleave", function () {
-                    if (!this.classList.contains("animated")) return;
-                    this.style.transform = "translateY(0)";
-                });
+          } else if (item.class) {
+            const elements = document.getElementsByClassName(item.class);
+            Array.from(elements).forEach((element, index) => {
+              element.dataset.delay = item.delay + index * 100;
+              observer.observe(element);
             });
-
-            // تأثيرات hover لخطوات العمل
-            const stepNumbers = document.querySelectorAll(".step-number");
-            stepNumbers.forEach((step) => {
-                step.addEventListener("mouseenter", function () {
-                    this.style.transform = "scale(1.1) rotate(10deg)";
-                });
-
-                step.addEventListener("mouseleave", function () {
-                    this.style.transform = "scale(1) rotate(0deg)";
-                });
-            });
-
-            // تأثيرات hover للروابط
-            const serviceLinks = document.querySelectorAll(".service-link");
-            serviceLinks.forEach((link) => {
-                link.addEventListener("mouseenter", function () {
-                    this.style.transform = "translateX(-5px)";
-                    this.querySelector("i").style.transform = "translateX(-5px)";
-                });
-
-                link.addEventListener("mouseleave", function () {
-                    this.style.transform = "translateX(0)";
-                    this.querySelector("i").style.transform = "translateX(0)";
-                });
-            });
-
-            // تغيير الهيدر عند التمرير
-            const header = document.getElementById("main-header");
-            window.addEventListener("scroll", () => {
-                if (window.scrollY > 50) {
-                    header.classList.add("scrolled");
-                } else {
-                    header.classList.remove("scrolled");
-                }
-            });
-
-            // القائمة المتحركة للجوال
-            const menuToggle = document.getElementById("menu-toggle");
-            const navLinks = document.getElementById("nav-links");
-
-            menuToggle.addEventListener("click", () => {
-                navLinks.classList.toggle("active");
-                menuToggle.innerHTML = navLinks.classList.contains("active")
-                    ? '<i class="fas fa-times"></i>'
-                    : '<i class="fas fa-bars"></i>';
-            });
-
-            // إغلاق القائمة عند النقر على رابط
-            document.querySelectorAll(".nav-links a").forEach((link) => {
-                link.addEventListener("click", () => {
-                    navLinks.classList.remove("active");
-                    menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-                });
-            });
-
-            // تأثيرات إضافية للبطاقات عند التمرير عليها
-            document.querySelectorAll(".card").forEach((card) => {
-                card.addEventListener("mouseenter", () => {
-                    card.style.transform = "translateY(-10px)";
-                });
-
-                card.addEventListener("mouseleave", () => {
-                    if (!card.classList.contains("animated")) return;
-                    card.style.transform = "translateY(0)";
-                });
-            });
+          }
         });
 
-        // دالة تأثير العد
-        function animateCount(element, start, end, duration) {
-            let startTimestamp = null;
-            const step = (timestamp) => {
-                if (!startTimestamp) startTimestamp = timestamp;
-                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                const value = Math.floor(progress * (end - start) + start);
-                element.textContent = value;
+        // تأثير العد للأرقام في قسم من نحن
+        const statNumbers = document.querySelectorAll(".about-stat-number");
+        const statObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const element = entry.target;
+                const target = parseInt(element.getAttribute("data-target"));
+                animateCount(element, 0, target, 2000);
+                statObserver.unobserve(element);
+              }
+            });
+          },
+          { threshold: 0.5 }
+        );
 
-                if (progress < 1) {
-                    window.requestAnimationFrame(step);
-                }
-            };
-            window.requestAnimationFrame(step);
+        statNumbers.forEach((stat) => statObserver.observe(stat));
+
+        // تأثير المكعب التفاعلي
+        const cube = document.querySelector(".about-cube");
+        if (cube) {
+          let mouseX = 0;
+          let mouseY = 0;
+          let cubeX = 0;
+          let cubeY = 0;
+
+          document.addEventListener("mousemove", (e) => {
+            mouseX = e.clientX / window.innerWidth - 0.5;
+            mouseY = e.clientY / window.innerHeight - 0.5;
+          });
+
+          function animateCube() {
+            cubeX += (mouseX * 180 - cubeX) * 0.05;
+            cubeY += (mouseY * 180 - cubeY) * 0.05;
+
+            cube.style.transform = `rotateX(${cubeY}deg) rotateY(${cubeX}deg)`;
+
+            requestAnimationFrame(animateCube);
+          }
+
+          animateCube();
         }
+
+        // تأثيرات hover للبطاقات
+        const cards = document.querySelectorAll(".value-card, .service-card");
+        cards.forEach((card) => {
+          card.addEventListener("mouseenter", function () {
+            if (this.classList.contains("service-card")) {
+              this.style.transform = "translateY(-15px)";
+            } else {
+              this.style.transform = "translateY(-10px)";
+            }
+          });
+
+          card.addEventListener("mouseleave", function () {
+            if (!this.classList.contains("animated")) return;
+            this.style.transform = "translateY(0)";
+          });
+        });
+
+        // تأثيرات hover لخطوات العمل
+        const stepNumbers = document.querySelectorAll(".step-number");
+        stepNumbers.forEach((step) => {
+          step.addEventListener("mouseenter", function () {
+            this.style.transform = "scale(1.1) rotate(10deg)";
+          });
+
+          step.addEventListener("mouseleave", function () {
+            this.style.transform = "scale(1) rotate(0deg)";
+          });
+        });
+
+        // تأثيرات hover للروابط
+        const serviceLinks = document.querySelectorAll(".service-link");
+        serviceLinks.forEach((link) => {
+          link.addEventListener("mouseenter", function () {
+            this.style.transform = "translateX(-5px)";
+            this.querySelector("i").style.transform = "translateX(-5px)";
+          });
+
+          link.addEventListener("mouseleave", function () {
+            this.style.transform = "translateX(0)";
+            this.querySelector("i").style.transform = "translateX(0)";
+          });
+        });
+
+        // تغيير الهيدر عند التمرير
+        const header = document.getElementById("main-header");
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 50) {
+            header.classList.add("scrolled");
+          } else {
+            header.classList.remove("scrolled");
+          }
+        });
+
+        // القائمة المتحركة للجوال
+        const menuToggle = document.getElementById("menu-toggle");
+        const navLinks = document.getElementById("nav-links");
+
+        menuToggle.addEventListener("click", () => {
+          navLinks.classList.toggle("active");
+          menuToggle.innerHTML = navLinks.classList.contains("active")
+            ? '<i class="fas fa-times"></i>'
+            : '<i class="fas fa-bars"></i>';
+        });
+
+        // إغلاق القائمة عند النقر على رابط
+        document.querySelectorAll(".nav-links a").forEach((link) => {
+          link.addEventListener("click", () => {
+            navLinks.classList.remove("active");
+            menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+          });
+        });
+
+        // تأثيرات إضافية للبطاقات عند التمرير عليها
+        document.querySelectorAll(".card").forEach((card) => {
+          card.addEventListener("mouseenter", () => {
+            card.style.transform = "translateY(-10px)";
+          });
+
+          card.addEventListener("mouseleave", () => {
+            if (!card.classList.contains("animated")) return;
+            card.style.transform = "translateY(0)";
+          });
+        });
+      });
+
+      // دالة تأثير العد
+      function animateCount(element, start, end, duration) {
+        let startTimestamp = null;
+        const step = (timestamp) => {
+          if (!startTimestamp) startTimestamp = timestamp;
+          const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+          const value = Math.floor(progress * (end - start) + start);
+          element.textContent = value;
+
+          if (progress < 1) {
+            window.requestAnimationFrame(step);
+          }
+        };
+        window.requestAnimationFrame(step);
+      }
     </script>
-</body>
+  </body>
 </html>
